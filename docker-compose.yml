@@ -14,6 +14,7 @@ services:
     environment:
       - DEBUG=True
       - DJANGO_SETTINGS_MODULE=faq_project.settings
+      - DJANGO_ENV=docker
 
   redis:
     image: redis:alpine
