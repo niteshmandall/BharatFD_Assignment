@@ -5,17 +5,17 @@ from googletrans import Translator
 class FAQ(models.Model):
     question_en = models.TextField()
     answer_en = RichTextField()
-    question_hi = models.TextField(blank=True)
-    question_bn = models.TextField(blank=True)
+    question_hi = models.TextField(blank=True, null=True)
+    question_bn = models.TextField(blank=True, null=True)
     # Add more language fields as needed
 
     def get_translated_question(self, lang):
-        return getattr(self, f'question_{lang}', self.question_en)
+        """Return translated question or fallback to English."""
+        return getattr(self, f'question_{lang}', None) or self.question_en
 
     def save(self, *args, **kwargs):
         translator = Translator()
-        if not self.question_hi:
-            self.question_hi = translator.translate(self.question_en, dest='hi').text
-        if not self.question_bn:
-            self.question_bn = translator.translate(self.question_en, dest='bn').text
+        # Always update translations from the current English value
+        self.question_hi = translator.translate(self.question_en, dest='hi').text
+        self.question_bn = translator.translate(self.question_en, dest='bn').text
         super().save(*args, **kwargs)
