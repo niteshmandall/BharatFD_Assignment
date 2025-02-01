@@ -35,6 +35,7 @@ class FAQViewSet(viewsets.ModelViewSet):
                     translated_answer = answer_source
 
             data.append({
+                'id': faq.id,
                 'question': faq.get_translated_question(lang),
                 'answer': translated_answer
             })
