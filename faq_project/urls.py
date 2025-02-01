@@ -6,9 +6,9 @@ from rest_framework.routers import DefaultRouter
 from faq.views import FAQViewSet
 
 router = DefaultRouter()
-router.register(r'faqs', FAQViewSet, basename='faq')
+router.register(r"faqs", FAQViewSet, basename="faq")
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('api/', include(router.urls)),  # API endpoints
+    path("admin/", admin.site.urls),
+    path("api/", include(router.urls)),  # API endpoints
 ]
