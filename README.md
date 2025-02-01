@@ -13,6 +13,14 @@ This project is a Django-based backend API for managing Frequently Asked Questio
 
 ---
 
+## AWS Deployment Notes
+The application has been deployed on AWS with the following details:
+- **Base URL:** [http://35.174.5.10:8000](http://35.174.5.10:8000)
+- The project is running within a Dockerized environment.
+- Ensure that the necessary AWS security groups allow inbound traffic on port **8000**.
+
+---
+
 ## Installation
 ### Prerequisites
 Ensure you have the following installed:
@@ -80,7 +88,7 @@ http://localhost:8000/admin/
 
 ---
 
-## Docker Setup & Deployment
+## Docker Setup
 ### Running with Docker
 1. **Build the Docker Image**:
    ```bash
