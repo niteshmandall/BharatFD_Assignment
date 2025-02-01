@@ -23,7 +23,7 @@ Ensure you have the following installed:
 ### Clone the Repository
 ```bash
 git clone https://github.com/niteshmandall/BharatFD_Assignment
-cd niteshmandall-bharatfd_assignment
+cd BharatFD_Assignment
 ```
 
 ### Install Dependencies
